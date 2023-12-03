@@ -19,4 +19,7 @@ public class GameDecision {
         return target != 1 && target != 2;
     }
 
+    public boolean getGameDecision() {
+        return gameDecision == 1;
+    }
 }
