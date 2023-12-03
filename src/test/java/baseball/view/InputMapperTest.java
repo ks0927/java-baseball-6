@@ -26,4 +26,23 @@ class InputMapperTest {
         Assertions.assertThatCode(() -> inputMapper.mapToBaseballNumbers(target))
                 .isExactlyInstanceOf(IllegalArgumentException.class);
     }
+
+    @DisplayName("게임 플레이 결정값을 올바른 값을 입력했을때 예외가 발생하지 않는다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"1", "2"})
+    void correctMapToGameDecision(String target) {
+
+        InputMapper inputMapper = new InputMapper();
+        Assertions.assertThatCode(() -> inputMapper.mapToGameDecision(target)).doesNotThrowAnyException();
+    }
+
+    @DisplayName("숫자 야구 숫자값들을 숫자가 아닌 값을 입력했을때 예외가 발생한다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"3", "4", "a", "tabc"})
+    void enableMapToGameDecision1(String target) {
+
+        InputMapper inputMapper = new InputMapper();
+        Assertions.assertThatCode(() -> inputMapper.mapToGameDecision(target))
+                .isExactlyInstanceOf(IllegalArgumentException.class);
+    }
 }
