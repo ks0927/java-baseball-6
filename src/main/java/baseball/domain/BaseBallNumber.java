@@ -1,12 +1,12 @@
 package baseball.domain;
 
-public class BaseBallNumber {
+public class BaseballNumber {
     private static final int MIN_RANGE = 1;
     private static final int MAX_RANGE = 9;
 
     private final int ballNumber;
 
-    public BaseBallNumber(int ballNumber) {
+    public BaseballNumber(int ballNumber) {
         validate(ballNumber);
         this.ballNumber = ballNumber;
     }
