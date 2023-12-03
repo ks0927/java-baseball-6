@@ -2,6 +2,7 @@ package baseball.view;
 
 import baseball.domain.BaseballNumber;
 import baseball.domain.BaseballNumbers;
+import baseball.domain.GameDecision;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,11 @@ public class InputMapper {
             baseballNumbers.add(new BaseballNumber(number));
         }
         return new BaseballNumbers(baseballNumbers);
+    }
+
+    public GameDecision mapToGameDecision(String input) {
+        int number = validInteger(input.charAt(0));
+        return new GameDecision(number);
     }
 
     private int validInteger(char aChar) {
