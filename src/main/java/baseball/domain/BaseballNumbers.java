@@ -31,4 +31,8 @@ public class BaseballNumbers {
         Set<BaseballNumber> distinctNumbers = baseballNumbers.stream().collect(Collectors.toSet());
         return distinctNumbers.size() != BASEBALL_SIZE;
     }
+
+    public List<BaseballNumber> getBaseballNumbers() {
+        return baseballNumbers;
+    }
 }
